@@ -1,65 +1,74 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Git</title>
-        <style>
-/* From extension vscode.github */
-/*---------------------------------------------------------------------------------------------
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Git</title>
+    <style>
+      /* From extension vscode.github */
+      /*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-.vscode-dark img[src$=\#gh-light-mode-only],
-.vscode-light img[src$=\#gh-dark-mode-only] {
-	display: none;
-}
+      .vscode-dark img[src$="\#gh-light-mode-only"],
+      .vscode-light img[src$="\#gh-dark-mode-only"] {
+        display: none;
+      }
+    </style>
 
-</style>
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
-<style>
-            body {
-                font-family: Roboto;
-                font-size: 20px;
-                line-height: 1.6;
-            }
-        </style>
-        <style>
-.task-list-item {
-    list-style-type: none;
-}
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css"
+    />
+    <style>
+      body {
+        font-family: Roboto;
+        font-size: 20px;
+        line-height: 1.6;
+      }
+    </style>
+    <style>
+      .task-list-item {
+        list-style-type: none;
+      }
 
-.task-list-item-checkbox {
-    margin-left: -20px;
-    vertical-align: middle;
-    pointer-events: none;
-}
-</style>
-        
-    </head>
-    <body class="vscode-body vscode-dark">
-        <h1 id="git">Git</h1>
-<h2 id="configuring-git">Configuring git</h2>
-<ul>
-<li>Need to set the name and email of the user</li>
-</ul>
-<pre><code class="language-bash">git config --global user.name <span class="hljs-string">&quot;&lt;name&gt;&quot;</span>
+      .task-list-item-checkbox {
+        margin-left: -20px;
+        vertical-align: middle;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body class="vscode-body vscode-dark">
+    <h1 id="git">Git</h1>
+    <h2 id="configuring-git">Configuring git</h2>
+    <ul>
+      <li>Need to set the name and email of the user</li>
+    </ul>
+    <pre><code class="language-bash">git config --global user.name <span class="hljs-string">&quot;&lt;name&gt;&quot;</span>
 git config --global user.email <span class="hljs-string">&quot;&lt;email-id&gt;&quot;</span>
 </code></pre>
-<hr>
-<h2 id="introduction">Introduction</h2>
-<ul>
-<li>
-<p>Repositories
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-15%2023-17-29.png" alt=""></p>
-</li>
-<li>
-<p>Basic commands</p>
-</li>
-</ul>
-<pre><code class="language-bash"><span class="hljs-comment"># Creating a git repository, At the top level folder containing the project</span>
+    <hr />
+    <h2 id="introduction">Introduction</h2>
+    <ul>
+      <li>
+        <p>
+          Repositories
+          <img
+            src="images/Screenshot%20from%202023-02-15%2023-17-29.png"
+            alt=""
+          />
+        </p>
+      </li>
+      <li>
+        <p>Basic commands</p>
+      </li>
+    </ul>
+    <pre><code class="language-bash"><span class="hljs-comment"># Creating a git repository, At the top level folder containing the project</span>
 git init
 <span class="hljs-comment"># Checking the status for git repository</span>
 git status
@@ -68,157 +77,304 @@ git <span class="hljs-built_in">log</span>
 <span class="hljs-comment"># or</span>
 git <span class="hljs-built_in">log</span> --oneline
 </code></pre>
-<ul>
-<li>Adding
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-15%2023-34-15.png" alt=""></li>
-</ul>
-<pre><code class="language-bash">git add file1 file2
+    <ul>
+      <li>
+        Adding
+        <img
+          src="images/Screenshot%20from%202023-02-15%2023-34-15.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <pre><code class="language-bash">git add file1 file2
 <span class="hljs-comment"># or</span>
 git add . <span class="hljs-comment"># stage all changes at once</span>
 </code></pre>
-<ul>
-<li>Commiting
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-15%2023-16-57.png" alt=""></li>
-</ul>
-<pre><code class="language-bash">git commit -m <span class="hljs-string">&quot;&lt;inline-message&gt;&quot;</span>
+    <ul>
+      <li>
+        Commiting
+        <img
+          src="images/Screenshot%20from%202023-02-15%2023-16-57.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <pre><code class="language-bash">git commit -m <span class="hljs-string">&quot;&lt;inline-message&gt;&quot;</span>
 </code></pre>
-<ul>
-<li>Git workflow
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-15%2023-33-00.png" alt=""></li>
-</ul>
-<hr>
-<h2 id="working-with-git">Working with git</h2>
-<ul>
-<li>Amending commits: Redoing the <strong>previous</strong> commit</li>
-</ul>
-<pre><code class="language-bash">git commit -m <span class="hljs-string">&quot;commit-msg&quot;</span>
+    <ul>
+      <li>
+        Git workflow
+        <img
+          src="images/Screenshot%20from%202023-02-15%2023-33-00.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <hr />
+    <h2 id="working-with-git">Working with git</h2>
+    <ul>
+      <li>Amending commits: Redoing the <strong>previous</strong> commit</li>
+    </ul>
+    <pre><code class="language-bash">git commit -m <span class="hljs-string">&quot;commit-msg&quot;</span>
 git add file1
 git commit --amend <span class="hljs-comment"># modifies the prev commit to include file1</span>
 </code></pre>
-<ul>
-<li>Writing commit messages: Follow present tense imperative style eg. Add feature 1</li>
-<li>Atomic commits
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-16%2022-45-08.png" alt=""></li>
-<li>Ignoring files: .gitignore
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-16%2022-46-05.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-16%2022-46-23.png" alt=""></li>
-</ul>
-<hr>
-<h2 id="git-branching">Git branching</h2>
-<ul>
-<li>Stucture of git commits
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-16%2023-28-07.png" alt=""></li>
-<li>Branches: Useful for segregating multiple contexts
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-16%2023-29-33.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-16%2023-31-26.png" alt=""></li>
-<li>Head
-<ul>
-<li>Head points to a Branch reference and a Branch reference points to a commit
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-16%2023-34-44.png" alt=""></li>
-</ul>
-</li>
-<li>Viewing all branches
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-16%2023-38-49.png" alt=""></li>
-</ul>
-<pre><code class="language-bash">git branch
+    <ul>
+      <li>
+        Writing commit messages: Follow present tense imperative style eg. Add
+        feature 1
+      </li>
+      <li>
+        Atomic commits
+        <img
+          src="images/Screenshot%20from%202023-02-16%2022-45-08.png"
+          alt=""
+        />
+      </li>
+      <li>
+        Ignoring files: .gitignore
+        <img
+          src="images/Screenshot%20from%202023-02-16%2022-46-05.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-16%2022-46-23.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <hr />
+    <h2 id="git-branching">Git branching</h2>
+    <ul>
+      <li>
+        Stucture of git commits
+        <img
+          src="images/Screenshot%20from%202023-02-16%2023-28-07.png"
+          alt=""
+        />
+      </li>
+      <li>
+        Branches: Useful for segregating multiple contexts
+        <img
+          src="images/Screenshot%20from%202023-02-16%2023-29-33.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-16%2023-31-26.png"
+          alt=""
+        />
+      </li>
+      <li>
+        Head
+        <ul>
+          <li>
+            Head points to a Branch reference and a Branch reference points to a
+            commit
+            <img
+              src="images/Screenshot%20from%202023-02-16%2023-34-44.png"
+              alt=""
+            />
+          </li>
+        </ul>
+      </li>
+      <li>
+        Viewing all branches
+        <img
+          src="images/Screenshot%20from%202023-02-16%2023-38-49.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <pre><code class="language-bash">git branch
 git branch -v <span class="hljs-comment"># to view more info</span>
 </code></pre>
-<ul>
-<li>Creating a new branch
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-16%2023-39-42.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-16%2023-50-37.png" alt=""></li>
-</ul>
-<pre><code class="language-bash">git branch &lt;branch-name&gt;
+    <ul>
+      <li>
+        Creating a new branch
+        <img
+          src="images/Screenshot%20from%202023-02-16%2023-39-42.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-16%2023-50-37.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <pre><code class="language-bash">git branch &lt;branch-name&gt;
 </code></pre>
-<p><img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-16%2023-40-35.png" alt=""></p>
-<ul>
-<li>Switching branches
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-16%2023-43-10.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-16%2023-47-17.png" alt=""></li>
-</ul>
-<pre><code class="language-bash">git switch &lt;branch-name&gt; <span class="hljs-comment"># newer</span>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-16%2023-40-35.png" alt="" />
+    </p>
+    <ul>
+      <li>
+        Switching branches
+        <img
+          src="images/Screenshot%20from%202023-02-16%2023-43-10.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-16%2023-47-17.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <pre><code class="language-bash">git switch &lt;branch-name&gt; <span class="hljs-comment"># newer</span>
 <span class="hljs-comment"># or</span>
 git checkout &lt;branch-name&gt; <span class="hljs-comment">#older</span>
 
 <span class="hljs-comment"># switch to new branch while also creating it</span>
 git switch -c &lt;branch-name&gt;
 </code></pre>
-<p><em>Note: Untracked files follow the head to wherever it goes while if we have some changes in tracked files and we try to switch branches then git gives us an error</em></p>
-<ul>
-<li>Deleting branch
-<ul>
-<li>Switch to some other branch as cannot delete the branch at which we are currently checked out</li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-bash">git branch -d &lt;branch-name&gt;
+    <p>
+      <em
+        >Note: Untracked files follow the head to wherever it goes while if we
+        have some changes in tracked files and we try to switch branches then
+        git gives us an error</em
+      >
+    </p>
+    <ul>
+      <li>
+        Deleting branch
+        <ul>
+          <li>
+            Switch to some other branch as cannot delete the branch at which we
+            are currently checked out
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <pre><code class="language-bash">git branch -d &lt;branch-name&gt;
 <span class="hljs-comment"># or</span>
 git branch -D &lt;branch-name&gt; <span class="hljs-comment">#delete a branch which is not fully merged; Shortcut for -df (--delete --force)</span>
 </code></pre>
-<ul>
-<li>Renaming branch
-<ul>
-<li>Switch to branch you want to rename</li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-bash">git branch -m &lt;new-branch-name&gt;
+    <ul>
+      <li>
+        Renaming branch
+        <ul>
+          <li>Switch to branch you want to rename</li>
+        </ul>
+      </li>
+    </ul>
+    <pre><code class="language-bash">git branch -m &lt;new-branch-name&gt;
 </code></pre>
-<ul>
-<li>Merging branches
-<ul>
-<li>We merge branches, not specific commits</li>
-<li>We always merge to the current HEAD branch</li>
-<li>To merge a branch into another
-<ul>
-<li>Switch to branch you want to merge the changes into (receiving branch)</li>
-<li>use <code>git merge &lt;branch-name&gt;</code> to merge
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-20%2022-33-34.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-20%2022-34-52.png" alt=""></li>
-</ul>
-</li>
-<li><strong>Fast forward merge (Catch up)</strong>
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-20%2022-40-08.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-20%2022-40-35.png" alt=""></li>
-<li><strong>Merge commits</strong>
-<ul>
-<li>They have multiple parents
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-20%2022-59-30.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-20%2022-59-37.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-20%2022-59-44.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-20%2022-59-48.png" alt=""></li>
-</ul>
-</li>
-<li><strong>Merge conflicts</strong>
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-20%2023-06-32.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-20%2023-06-59.png" alt="">
-<ul>
-<li>Conflict markers: Git changes the contents of your files to indicate the conflicts that it wants you to resolve by adding some markers
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-20%2023-10-15.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-20%2023-11-01.png" alt=""></li>
-<li>Resolving conflicts
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-20%2023-12-14.png" alt=""></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="git-diff">Git Diff</h2>
-<p><img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-21%2000-34-51.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-21%2000-38-06.png" alt=""></p>
-<pre><code class="language-bash">git diff <span class="hljs-comment">#shows changes between the staging area and working directory</span>
+    <ul>
+      <li>
+        Merging branches
+        <ul>
+          <li>We merge branches, not specific commits</li>
+          <li>We always merge to the current HEAD branch</li>
+          <li>
+            To merge a branch into another
+            <ul>
+              <li>
+                Switch to branch you want to merge the changes into (receiving
+                branch)
+              </li>
+              <li>
+                use <code>git merge &lt;branch-name&gt;</code> to merge
+                <img
+                  src="images/Screenshot%20from%202023-02-20%2022-33-34.png"
+                  alt=""
+                />
+                <img
+                  src="images/Screenshot%20from%202023-02-20%2022-34-52.png"
+                  alt=""
+                />
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Fast forward merge (Catch up)</strong>
+            <img
+              src="images/Screenshot%20from%202023-02-20%2022-40-08.png"
+              alt=""
+            />
+            <img
+              src="images/Screenshot%20from%202023-02-20%2022-40-35.png"
+              alt=""
+            />
+          </li>
+          <li>
+            <strong>Merge commits</strong>
+            <ul>
+              <li>
+                They have multiple parents
+                <img
+                  src="images/Screenshot%20from%202023-02-20%2022-59-30.png"
+                  alt=""
+                />
+                <img
+                  src="images/Screenshot%20from%202023-02-20%2022-59-37.png"
+                  alt=""
+                />
+                <img
+                  src="images/Screenshot%20from%202023-02-20%2022-59-44.png"
+                  alt=""
+                />
+                <img
+                  src="images/Screenshot%20from%202023-02-20%2022-59-48.png"
+                  alt=""
+                />
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Merge conflicts</strong>
+            <img
+              src="images/Screenshot%20from%202023-02-20%2023-06-32.png"
+              alt=""
+            />
+            <img
+              src="images/Screenshot%20from%202023-02-20%2023-06-59.png"
+              alt=""
+            />
+            <ul>
+              <li>
+                Conflict markers: Git changes the contents of your files to
+                indicate the conflicts that it wants you to resolve by adding
+                some markers
+                <img
+                  src="images/Screenshot%20from%202023-02-20%2023-10-15.png"
+                  alt=""
+                />
+                <img
+                  src="images/Screenshot%20from%202023-02-20%2023-11-01.png"
+                  alt=""
+                />
+              </li>
+              <li>
+                Resolving conflicts
+                <img
+                  src="images/Screenshot%20from%202023-02-20%2023-12-14.png"
+                  alt=""
+                />
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <hr />
+    <h2 id="git-diff">Git Diff</h2>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-21%2000-34-51.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-21%2000-38-06.png" alt="" />
+    </p>
+    <pre><code class="language-bash">git diff <span class="hljs-comment">#shows changes between the staging area and working directory</span>
 </code></pre>
-<p><img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-21%2001-12-00.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-21%2001-12-53.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-21%2001-13-06.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-21%2001-13-20.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-21%2001-13-28.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-21%2001-13-43.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-21%2001-13-52.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-21%2001-14-04.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-21%2001-14-12.png" alt=""></p>
-<pre><code class="language-bash">git diff HEAD <span class="hljs-comment">#lists all changes in the working directory since the last commit; staged + unstaged changes</span>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-21%2001-12-00.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-21%2001-12-53.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-21%2001-13-06.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-21%2001-13-20.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-21%2001-13-28.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-21%2001-13-43.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-21%2001-13-52.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-21%2001-14-04.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-21%2001-14-12.png" alt="" />
+    </p>
+    <pre><code class="language-bash">git diff HEAD <span class="hljs-comment">#lists all changes in the working directory since the last commit; staged + unstaged changes</span>
 
 git diff --staged <span class="hljs-comment">#shows diff between the staging area and the last commit; &quot;Show me what will be included in my commit if I run git commit right now&quot;</span>
 <span class="hljs-comment"># OR</span>
@@ -235,19 +391,31 @@ git diff branch1..branch2
 <span class="hljs-comment"># diff-ing commits</span>
 git diff commit1..commit2
 </code></pre>
-<hr>
-<h2 id="stashing">Stashing</h2>
-<ul>
-<li>Switching from one branch to another:
-<ul>
-<li>If there are conflicting changes then we would get error on switching</li>
-<li>Else the changes follow us to the new branch
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-22%2001-01-28.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-22%2001-02-56.png" alt=""></li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-bash">git stash list <span class="hljs-comment"># View the list of stashes</span>
+    <hr />
+    <h2 id="stashing">Stashing</h2>
+    <ul>
+      <li>
+        Switching from one branch to another:
+        <ul>
+          <li>
+            If there are conflicting changes then we would get error on
+            switching
+          </li>
+          <li>
+            Else the changes follow us to the new branch
+            <img
+              src="images/Screenshot%20from%202023-02-22%2001-01-28.png"
+              alt=""
+            />
+            <img
+              src="images/Screenshot%20from%202023-02-22%2001-02-56.png"
+              alt=""
+            />
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <pre><code class="language-bash">git stash list <span class="hljs-comment"># View the list of stashes</span>
 
 git stash
 <span class="hljs-comment"># OR</span>
@@ -265,14 +433,13 @@ git stash clear <span class="hljs-comment"># Deletes all the stashes</span>
 <span class="hljs-comment"># OR</span>
 git stash drop &lt;stash-name&gt; <span class="hljs-comment"># Deletes a particular stash</span>
 </code></pre>
-<p><img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-22%2001-05-14.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-22%2001-06-42.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-22%2001-06-58.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-22%2001-07-21.png" alt="">
-<img src="file:////home/pmohit/GITDIR/GitAndGithub/images/Screenshot%20from%202023-02-22%2001-09-38.png" alt=""></p>
-<hr>
-
-        
-        
-    </body>
-    </html>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-22%2001-05-14.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-22%2001-06-42.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-22%2001-06-58.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-22%2001-07-21.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-22%2001-09-38.png" alt="" />
+    </p>
+    <hr />
+  </body>
+</html>
