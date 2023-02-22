@@ -68,7 +68,7 @@ git config --global user.email <span class="hljs-string">&quot;&lt;email-id&gt;&
         <p>Basic commands</p>
       </li>
     </ul>
-    <pre><code class="language-bash"><span class="hljs-comment"># Creating a git repository, At the top level folder containing the project</span>
+    <pre><code class="language-sh"><span class="hljs-comment"># Creating a git repository, At the top level folder containing the project</span>
 git init
 <span class="hljs-comment"># Checking the status for git repository</span>
 git status
@@ -440,6 +440,129 @@ git stash drop &lt;stash-name&gt; <span class="hljs-comment"># Deletes a particu
       <img src="images/Screenshot%20from%202023-02-22%2001-07-21.png" alt="" />
       <img src="images/Screenshot%20from%202023-02-22%2001-09-38.png" alt="" />
     </p>
+    <hr />
+    <h2 id="undoing-changes">Undoing changes</h2>
+    <ul>
+      <li>
+        <strong>Detached HEAD</strong>
+        <img
+          src="images/Screenshot%20from%202023-02-22%2008-23-39.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-22%2008-23-53.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-22%2008-24-22.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-22%2008-24-50.png"
+          alt=""
+        />
+        <ul>
+          <li>
+            In detached head state we can do following things: - Stay in
+            detached HEAD to examine the contents of the old commit. Poke
+            around, view the files, etc - Leave and go back to wherever you were
+            before - reattach the HEAD - Create a new branch and switch to it.
+            You can now make and save changes, since HEAD is no longer detached.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <img
+          src="images/Screenshot%20from%202023-02-22%2008-29-02.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <pre><code class="language-bash"><span class="hljs-comment"># git checkout: Used to create branches, switch to new branches, restore files, and undo history</span>
+git checkout &lt;commit-hash&gt; <span class="hljs-comment"># Detached head statte</span>
+git switch &lt;branch-name&gt; <span class="hljs-comment"># Reattach the head</span>
+
+git checkout HEAD~1 <span class="hljs-comment"># Previous commit</span>
+git checkout HEAD~2 <span class="hljs-comment"># (Head - 2)th commit</span>
+
+git switch - <span class="hljs-comment"># Switch to the last branch we were on</span>
+
+git checkout HEAD &lt;filename&gt; <span class="hljs-comment"># Discard any changes in the file and make the match the content of the file at HEAD</span>
+<span class="hljs-comment"># OR</span>
+git checkout -- &lt;filename&gt; <span class="hljs-comment"># Discard any changes in the file</span>
+
+git restore &lt;filename&gt; <span class="hljs-comment"># Discard any changes in the file and make the match the content of the file at HEAD</span>
+git restore --<span class="hljs-built_in">source</span> &lt;commit-hash&gt; &lt;file-name&gt; <span class="hljs-comment"># Discard any changes in the file and make the match the content of the file at the commit</span>
+git restore --staged &lt;filename&gt; <span class="hljs-comment"># Remove a file from the staging area</span>
+</code></pre>
+    <ul>
+      <li>
+        Git reset
+        <img
+          src="images/Screenshot%20from%202023-02-22%2008-53-53.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-22%2008-54-14.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-22%2008-54-56.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-22%2008-56-01.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-22%2008-56-41.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-22%2008-56-51.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <pre><code class="language-bash">git reset &lt;commit-hash&gt; <span class="hljs-comment"># Soft reset; Removes the commits but keeps the changes</span>
+git reset --hard &lt;commit-hash&gt; <span class="hljs-comment"># Hard reset; Removes the commits as well as changes</span>
+</code></pre>
+    <ul>
+      <li>
+        Git revert
+        <img
+          src="images/Screenshot%20from%202023-02-22%2008-59-44.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-22%2009-00-06.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-22%2009-00-15.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-22%2009-00-25.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-22%2009-00-35.png"
+          alt=""
+        />
+        <ul>
+          <li>
+            Both git reset and git revert help us reverse changes, but there is
+            a significant difference when it comes to collaboration. If you want
+            to <strong>reverse some commits</strong> that
+            <strong>other people already have on their machines</strong>, you
+            should <strong>use revert</strong>. If you want to
+            <strong>reverse commits that you haven't shared with others</strong
+            >, <strong>use reset</strong> and no one will ever know!
+          </li>
+        </ul>
+      </li>
+    </ul>
     <hr />
   </body>
 </html>

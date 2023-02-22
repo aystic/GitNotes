@@ -18,7 +18,7 @@ git config --global user.email "<email-id>"
 
 - Basic commands
 
-```bash
+```sh
 # Creating a git repository, At the top level folder containing the project
 git init
 # Checking the status for git repository
@@ -229,5 +229,57 @@ git stash drop <stash-name> # Deletes a particular stash
 ![](images/Screenshot%20from%202023-02-22%2001-06-58.png)
 ![](images/Screenshot%20from%202023-02-22%2001-07-21.png)
 ![](images/Screenshot%20from%202023-02-22%2001-09-38.png)
+
+---
+
+## Undoing changes
+
+- **Detached HEAD**
+  ![](images/Screenshot%20from%202023-02-22%2008-23-39.png)
+  ![](images/Screenshot%20from%202023-02-22%2008-23-53.png)
+  ![](images/Screenshot%20from%202023-02-22%2008-24-22.png)
+  ![](images/Screenshot%20from%202023-02-22%2008-24-50.png)
+  - In detached head state we can do following things: - Stay in detached HEAD to examine the contents of the old commit. Poke around, view the files, etc - Leave and go back to wherever you were before - reattach the HEAD - Create a new branch and switch to it. You can now make and save changes, since HEAD is no longer detached.
+- ![](images/Screenshot%20from%202023-02-22%2008-29-02.png)
+
+```bash
+# git checkout: Used to create branches, switch to new branches, restore files, and undo history
+git checkout <commit-hash> # Detached head statte
+git switch <branch-name> # Reattach the head
+
+git checkout HEAD~1 # Previous commit
+git checkout HEAD~2 # (Head - 2)th commit
+
+git switch - # Switch to the last branch we were on
+
+git checkout HEAD <filename> # Discard any changes in the file and make the match the content of the file at HEAD
+# OR
+git checkout -- <filename> # Discard any changes in the file
+
+git restore <filename> # Discard any changes in the file and make the match the content of the file at HEAD
+git restore --source <commit-hash> <file-name> # Discard any changes in the file and make the match the content of the file at the commit
+git restore --staged <filename> # Remove a file from the staging area
+```
+
+- Git reset
+  ![](images/Screenshot%20from%202023-02-22%2008-53-53.png)
+  ![](images/Screenshot%20from%202023-02-22%2008-54-14.png)
+  ![](images/Screenshot%20from%202023-02-22%2008-54-56.png)
+  ![](images/Screenshot%20from%202023-02-22%2008-56-01.png)
+  ![](images/Screenshot%20from%202023-02-22%2008-56-41.png)
+  ![](images/Screenshot%20from%202023-02-22%2008-56-51.png)
+
+```bash
+git reset <commit-hash> # Soft reset; Removes the commits but keeps the changes
+git reset --hard <commit-hash> # Hard reset; Removes the commits as well as changes
+```
+
+- Git revert
+  ![](images/Screenshot%20from%202023-02-22%2008-59-44.png)
+  ![](images/Screenshot%20from%202023-02-22%2009-00-06.png)
+  ![](images/Screenshot%20from%202023-02-22%2009-00-15.png)
+  ![](images/Screenshot%20from%202023-02-22%2009-00-25.png)
+  ![](images/Screenshot%20from%202023-02-22%2009-00-35.png)
+  - Both git reset and git revert help us reverse changes, but there is a significant difference when it comes to collaboration. If you want to **reverse some commits** that **other people already have on their machines**, you should **use revert**. If you want to **reverse commits that you haven't shared with others**, **use reset** and no one will ever know!
 
 ---
