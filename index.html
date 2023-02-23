@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="manifest" href="assets/site.webmanifest" />
     <title>Git</title>
     <style>
       /* From extension vscode.github */
@@ -563,6 +567,176 @@ git reset --hard &lt;commit-hash&gt; <span class="hljs-comment"># Hard reset; Re
         </ul>
       </li>
     </ul>
+    <hr />
+    <h2 id="github">GitHub</h2>
+    <ul>
+      <li>
+        Github is a hosting platform for git repositories. You can put your own
+        Git repos on Github and access them from anywhere and share them with
+        people around the world. Beyond hosting repos, Github also provides
+        additional collaboration features that are not native to Git (but are
+        super useful). Basically, Github helps people share and collaborate on
+        repos.
+        <img
+          src="images/Screenshot%20from%202023-02-23%2023-20-40.png"
+          alt=""
+        />
+      </li>
+      <li>
+        <strong>Cloning</strong>
+        <ul>
+          <li>
+            Git will retrieve all the files associated with the repository and
+            will copy them to your local machine.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <pre><code class="language-bash">git <span class="hljs-built_in">clone</span> &lt;repo-url&gt;
+</code></pre>
+    <ul>
+      <li>
+        Adding remote to an existing local repo
+        <img
+          src="images/Screenshot%20from%202023-02-23%2023-52-24.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-23%2023-56-15.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <pre><code class="language-bash"><span class="hljs-comment"># View remotes</span>
+git remote -v
+<span class="hljs-comment"># OR</span>
+git remote
+
+<span class="hljs-comment"># Adding a new remote</span>
+git remote add &lt;name&gt; &lt;url&gt; <span class="hljs-comment"># name is just a label or alias for a particular remote</span>
+
+<span class="hljs-comment"># removing a remote</span>
+git remote remove &lt;name&gt;
+
+<span class="hljs-comment"># renaming a remote</span>
+git remote rename &lt;old-name&gt; &lt;new-name&gt;
+</code></pre>
+    <ul>
+      <li>
+        Pushing
+        <img
+          src="images/Screenshot%20from%202023-02-24%2000-27-11.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-24%2000-27-43.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <pre><code class="language-bash"><span class="hljs-comment"># pushing the code to remote</span>
+git push &lt;remote&gt; &lt;branch&gt;
+
+<span class="hljs-comment"># pushing a local branch to a different remote branch</span>
+git push &lt;remote&gt; &lt;local-branch&gt;:&lt;remote-branch&gt;
+
+<span class="hljs-comment"># setting upstream of a branch</span>
+git push -u &lt;remote&gt; &lt;branch&gt;
+</code></pre>
+    <h2 id="">
+      <img src="images/Screenshot%20from%202023-02-24%2000-28-55.png" alt="" />
+    </h2>
+    <hr />
+    <h2 id="fetch-and-pull">Fetch and pull</h2>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-24%2000-36-11.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-24%2000-36-29.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-24%2000-36-37.png" alt="" />
+    </p>
+    <pre><code class="language-bash"><span class="hljs-comment"># View remote references</span>
+git remote -r
+</code></pre>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-24%2000-43-36.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-24%2000-43-52.png" alt="" />
+    </p>
+    <ul>
+      <li>
+        On cloning a new repo, Only the default branch is tracking the
+        remote/default-branch
+        <img
+          src="images/Screenshot%20from%202023-02-24%2000-48-43.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <pre><code class="language-bash">git remote -r <span class="hljs-comment"># list all remote branches</span>
+
+<span class="hljs-comment"># track a remote branch via a local branch</span>
+git switch &lt;remote-branch-name&gt; <span class="hljs-comment"># makes a local branch AND sets it up to track the concerned remote branch</span>
+<span class="hljs-comment"># OR</span>
+git checkout --track &lt;remote&gt;/&lt;branch-name&gt;
+</code></pre>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-24%2000-52-27.png" alt="" />
+    </p>
+    <ul>
+      <li>
+        <strong>Fetch</strong>
+        <img
+          src="images/Screenshot%20from%202023-02-24%2001-03-51.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-24%2001-04-19.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-24%2001-05-21.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <pre><code class="language-bash"><span class="hljs-comment"># Fetching</span>
+git fetch &lt;remote&gt;
+git fetch &lt;remote&gt; &lt;branch&gt;
+</code></pre>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-24%2001-06-14.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-24%2001-06-23.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-24%2001-06-32.png" alt="" />
+    </p>
+    <ul>
+      <li>
+        <strong>Pulling</strong>
+        <img
+          src="images/Screenshot%20from%202023-02-24%2001-07-04.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-24%2001-07-18.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-24%2001-08-39.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-24%2001-09-18.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-24%2001-09-53.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <pre><code class="language-bash"><span class="hljs-comment"># Run it from the branch where you want to merge the pulled changes</span>
+git pull &lt;remote&gt; &lt;branch&gt;
+</code></pre>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-24%2001-10-09.png" alt="" />
+    </p>
     <hr />
   </body>
 </html>

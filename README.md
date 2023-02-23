@@ -283,3 +283,112 @@ git reset --hard <commit-hash> # Hard reset; Removes the commits as well as chan
   - Both git reset and git revert help us reverse changes, but there is a significant difference when it comes to collaboration. If you want to **reverse some commits** that **other people already have on their machines**, you should **use revert**. If you want to **reverse commits that you haven't shared with others**, **use reset** and no one will ever know!
 
 ---
+
+## GitHub
+
+- Github is a hosting platform for git repositories. You can put your own Git repos on Github and access them from anywhere and share them with people around the world. Beyond hosting repos, Github also provides additional collaboration features that are not native to Git (but are super useful). Basically, Github helps people share and collaborate on repos.
+  ![](images/Screenshot%20from%202023-02-23%2023-20-40.png)
+- **Cloning**
+  - Git will retrieve all the files associated with the repository and will copy them to your local machine.
+
+```bash
+git clone <repo-url>
+```
+
+- Adding remote to an existing local repo
+  ![](images/Screenshot%20from%202023-02-23%2023-52-24.png)
+  ![](images/Screenshot%20from%202023-02-23%2023-56-15.png)
+
+```bash
+# View remotes
+git remote -v
+# OR
+git remote
+
+# Adding a new remote
+git remote add <name> <url> # name is just a label or alias for a particular remote
+
+# removing a remote
+git remote remove <name>
+
+# renaming a remote
+git remote rename <old-name> <new-name>
+```
+
+- Pushing
+  ![](images/Screenshot%20from%202023-02-24%2000-27-11.png)
+  ![](images/Screenshot%20from%202023-02-24%2000-27-43.png)
+
+```bash
+# pushing the code to remote
+git push <remote> <branch>
+
+# pushing a local branch to a different remote branch
+git push <remote> <local-branch>:<remote-branch>
+
+# setting upstream of a branch
+git push -u <remote> <branch>
+```
+
+## ![](images/Screenshot%20from%202023-02-24%2000-28-55.png)
+
+---
+
+## Fetch and pull
+
+![](images/Screenshot%20from%202023-02-24%2000-36-11.png)
+![](images/Screenshot%20from%202023-02-24%2000-36-29.png)
+![](images/Screenshot%20from%202023-02-24%2000-36-37.png)
+
+```bash
+# View remote references
+git remote -r
+```
+
+![](images/Screenshot%20from%202023-02-24%2000-43-36.png)
+![](images/Screenshot%20from%202023-02-24%2000-43-52.png)
+
+- On cloning a new repo, Only the default branch is tracking the remote/default-branch
+  ![](images/Screenshot%20from%202023-02-24%2000-48-43.png)
+
+```bash
+git remote -r # list all remote branches
+
+# track a remote branch via a local branch
+git switch <remote-branch-name> # makes a local branch AND sets it up to track the concerned remote branch
+# OR
+git checkout --track <remote>/<branch-name>
+```
+
+![](images/Screenshot%20from%202023-02-24%2000-52-27.png)
+
+- **Fetch**
+  ![](images/Screenshot%20from%202023-02-24%2001-03-51.png)
+  ![](images/Screenshot%20from%202023-02-24%2001-04-19.png)
+  ![](images/Screenshot%20from%202023-02-24%2001-05-21.png)
+
+```bash
+# Fetching
+git fetch <remote>
+git fetch <remote> <branch>
+```
+
+![](images/Screenshot%20from%202023-02-24%2001-06-14.png)
+![](images/Screenshot%20from%202023-02-24%2001-06-23.png)
+![](images/Screenshot%20from%202023-02-24%2001-06-32.png)
+
+- **Pulling**
+  ![](images/Screenshot%20from%202023-02-24%2001-07-04.png)
+  ![](images/Screenshot%20from%202023-02-24%2001-07-18.png)
+  ![](images/Screenshot%20from%202023-02-24%2001-08-39.png)
+  ![](images/Screenshot%20from%202023-02-24%2001-09-18.png)
+  ![](images/Screenshot%20from%202023-02-24%2001-09-53.png)
+
+```bash
+# Run it from the branch where you want to merge the pulled changes
+git pull <remote> <branch>
+```
+
+![](images/Screenshot%20from%202023-02-24%2001-10-09.png)
+
+---
