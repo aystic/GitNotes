@@ -371,6 +371,7 @@ git checkout --track <remote>/<branch-name>
 # Fetching
 git fetch <remote>
 git fetch <remote> <branch>
+git fetch # updates the list of remote branches
 ```
 
 ![](images/Screenshot%20from%202023-02-24%2001-06-14.png)
