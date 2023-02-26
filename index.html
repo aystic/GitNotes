@@ -713,6 +713,7 @@ git checkout --track &lt;remote&gt;/&lt;branch-name&gt;
     <pre><code class="language-bash"><span class="hljs-comment"># Fetching</span>
 git fetch &lt;remote&gt;
 git fetch &lt;remote&gt; &lt;branch&gt;
+git fetch <span class="hljs-comment"># updates the list of remote branches</span>
 </code></pre>
     <p>
       <img src="images/Screenshot%20from%202023-02-24%2001-06-14.png" alt="" />
@@ -750,6 +751,220 @@ git pull &lt;remote&gt; &lt;branch&gt;
     <p>
       <img src="images/Screenshot%20from%202023-02-24%2001-10-09.png" alt="" />
     </p>
+    <hr />
+    <h2 id="git-collaboration-workflows">Git collaboration workflows</h2>
+    <ul>
+      <li>
+        <strong>Centralized workflows</strong>
+        <ul>
+          <li>
+            The simplest collaborative workflow is to have everyone work on the
+            master branch (or main, or any other SINGLE branch).
+          </li>
+          <li>
+            Issues
+            <ul>
+              <li>
+                Lots of time spent resolving conflicts and merging code,
+                especially as team size scales up.
+              </li>
+              <li>
+                No one can work on anything without disturbing the main
+                codebase. How do you try adding something radically different
+                in? How do you experiment?
+              </li>
+              <li>
+                The only way to collaborate on a feature together with another
+                teammate is to push incomplete code to master. Other teammates
+                now have broken code...
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Feature branches</strong>
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-45-31.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-44-19.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-44-48.png"
+          alt=""
+        />
+        <ul>
+          <li>
+            Pull requests
+            <img
+              src="images/Screenshot%20from%202023-02-25%2004-46-22.png"
+              alt=""
+            />
+          </li>
+        </ul>
+      </li>
+      <li>
+        The workflow
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-46-52.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-49-54.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-50-56.png"
+          alt=""
+        />
+      </li>
+      <li>
+        Fork and clone: Another workflow
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-51-43.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-52-07.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-53-06.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-53-19.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-53-33.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-54-16.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-54-26.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-55-04.png"
+          alt=""
+        />
+        <img
+          src="images/Screenshot%20from%202023-02-25%2004-55-15.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <hr />
+    <h2 id="rebasing">Rebasing</h2>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-25%2019-00-59.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-25%2019-05-38.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-25%2019-05-49.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-25%2019-06-25.png" alt="" />
+    </p>
+    <pre><code class="language-bash"><span class="hljs-comment"># Cleaning history</span>
+git switch feature <span class="hljs-comment"># switch to branch which is to be rebased</span>
+git rebase master <span class="hljs-comment"># the branch on whom to rebase</span>
+</code></pre>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-25%2019-06-39.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-25%2019-07-03.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2013-57-14.png" alt="" />
+    </p>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-26%2014-12-38.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2014-13-58.png" alt="" />
+    </p>
+    <pre><code class="language-bash"><span class="hljs-comment"># Interactive rebase</span>
+git rebase -i &lt;commit-hash&gt; <span class="hljs-comment"># inplace rebasing</span>
+<span class="hljs-comment"># eg. git rebase -i HEAD~9</span>
+</code></pre>
+    <hr />
+    <h2 id="git-tags">Git tags</h2>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-26%2021-33-18.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2021-33-37.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2021-33-53.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2021-34-11.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2021-34-31.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2021-34-51.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2021-35-00.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2021-35-26.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2021-35-35.png" alt="" />
+    </p>
+    <pre><code class="language-bash">git tag <span class="hljs-comment"># List all tags</span>
+git tag -l <span class="hljs-string">&quot;&lt;pattern&gt;&quot;</span> <span class="hljs-comment"># List all tags satisfying the pattern</span>
+
+git checkout &lt;tag-name&gt; <span class="hljs-comment"># To checkout at a particular tag</span>
+
+git tag &lt;tag-name&gt; <span class="hljs-comment"># Create a lightweight tag, By default, Git will create the tag referring to the commit that HEAD is referencing</span>
+git tag -a &lt;tag-name&gt; <span class="hljs-comment"># Create annotated tags</span>
+<span class="hljs-comment"># OR</span>
+git tag -a &lt;tag-name&gt; -m &lt;message&gt;
+<span class="hljs-comment"># OR</span>
+git tag &lt;tag-name&gt; &lt;commit-hash&gt; <span class="hljs-comment"># Tagging previous commits</span>
+
+git tag -f &lt;tag-name&gt; <span class="hljs-comment"># Forcing the reuse of a used tag</span>
+
+git tag -d &lt;tag-name&gt; <span class="hljs-comment"># Deleting a tag</span>
+
+<span class="hljs-comment"># By default, the git push command doesn’t transfer tags to remote servers.</span>
+git push --tags <span class="hljs-comment"># Transfer all of your tags to the remote server that are not already there.</span>
+</code></pre>
+    <hr />
+    <h2 id="git-behind-the-scenes">Git behind the scenes</h2>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-26%2021-54-48.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2021-55-19.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2021-55-43.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2021-56-00.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2021-56-13.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2021-56-42.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-26%2021-57-04.png" alt="" />
+    </p>
+    <ul>
+      <li>
+        Git uses the SHA-1 algorithm
+        <img
+          src="images/Screenshot%20from%202023-02-26%2023-30-53.png"
+          alt=""
+        />
+      </li>
+      <li>
+        Git hash-object
+        <img
+          src="images/Screenshot%20from%202023-02-27%2000-08-38.png"
+          alt=""
+        />
+      </li>
+    </ul>
+    <pre><code class="language-bash"><span class="hljs-built_in">echo</span> hello | git hash-object --stdin <span class="hljs-comment"># Just spits out the hashed value without writing anything to .git directory</span>
+<span class="hljs-built_in">echo</span> hello | git hash-object --stdin -w <span class="hljs-comment"># write the content of the input in .git/objects folder</span>
+git cat-file -p &lt;object-hash&gt; <span class="hljs-comment"># Takes the stored file in the .git/objects directory and converts it back to the original file; -p is for pretty print</span>
+</code></pre>
+    <p>
+      <img src="images/Screenshot%20from%202023-02-27%2000-12-38.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-27%2000-13-00.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-27%2000-13-12.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-27%2000-15-06.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-27%2000-15-19.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-27%2000-15-34.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-27%2000-16-01.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-27%2000-16-20.png" alt="" />
+      <img src="images/Screenshot%20from%202023-02-27%2000-16-28.png" alt="" />
+    </p>
+    <pre><code class="language-bash"><span class="hljs-comment"># Viewing trees</span>
+git cat-file -p master^{tree} <span class="hljs-comment"># master^{tree} syntax specifies the tree object that is pointed to by the tip of our master branch</span>
+
+git cat-file -t &lt;commit-hash&gt; <span class="hljs-comment"># type of git object</span>
+</code></pre>
     <hr />
   </body>
 </html>
