@@ -393,3 +393,137 @@ git pull <remote> <branch>
 ![](images/Screenshot%20from%202023-02-24%2001-10-09.png)
 
 ---
+
+## Git collaboration workflows
+
+- **Centralized workflows**
+  - The simplest collaborative workflow is to have everyone work on the master branch (or main, or any other SINGLE branch).
+  - Issues
+    - Lots of time spent resolving conflicts and merging code, especially as team size scales up.
+    - No one can work on anything without disturbing the main codebase. How do you try adding something radically different in? How do you experiment?
+    - The only way to collaborate on a feature together with another teammate is to push incomplete code to master. Other teammates now have broken code...
+- **Feature branches**
+  ![](images/Screenshot%20from%202023-02-25%2004-45-31.png)
+  ![](images/Screenshot%20from%202023-02-25%2004-44-19.png)
+  ![](images/Screenshot%20from%202023-02-25%2004-44-48.png)
+  - Pull requests
+    ![](images/Screenshot%20from%202023-02-25%2004-46-22.png)
+- The workflow
+  ![](images/Screenshot%20from%202023-02-25%2004-46-52.png)
+  ![](images/Screenshot%20from%202023-02-25%2004-49-54.png)
+  ![](images/Screenshot%20from%202023-02-25%2004-50-56.png)
+- Fork and clone: Another workflow
+  ![](images/Screenshot%20from%202023-02-25%2004-51-43.png)
+  ![](images/Screenshot%20from%202023-02-25%2004-52-07.png)
+  ![](images/Screenshot%20from%202023-02-25%2004-53-06.png)
+  ![](images/Screenshot%20from%202023-02-25%2004-53-19.png)
+  ![](images/Screenshot%20from%202023-02-25%2004-53-33.png)
+  ![](images/Screenshot%20from%202023-02-25%2004-54-16.png)
+  ![](images/Screenshot%20from%202023-02-25%2004-54-26.png)
+  ![](images/Screenshot%20from%202023-02-25%2004-55-04.png)
+  ![](images/Screenshot%20from%202023-02-25%2004-55-15.png)
+
+---
+
+## Rebasing
+
+![](images/Screenshot%20from%202023-02-25%2019-00-59.png)
+![](images/Screenshot%20from%202023-02-25%2019-05-38.png)
+![](images/Screenshot%20from%202023-02-25%2019-05-49.png)
+![](images/Screenshot%20from%202023-02-25%2019-06-25.png)
+
+```bash
+# Cleaning history
+git switch feature # switch to branch which is to be rebased
+git rebase master # the branch on whom to rebase
+```
+
+![](images/Screenshot%20from%202023-02-25%2019-06-39.png)
+![](images/Screenshot%20from%202023-02-25%2019-07-03.png)
+![](images/Screenshot%20from%202023-02-26%2013-57-14.png)
+
+![](images/Screenshot%20from%202023-02-26%2014-12-38.png)
+![](images/Screenshot%20from%202023-02-26%2014-13-58.png)
+
+```bash
+# Interactive rebase
+git rebase -i <commit-hash> # inplace rebasing
+# eg. git rebase -i HEAD~9
+```
+
+---
+
+## Git tags
+
+![](images/Screenshot%20from%202023-02-26%2021-33-18.png)
+![](images/Screenshot%20from%202023-02-26%2021-33-37.png)
+![](images/Screenshot%20from%202023-02-26%2021-33-53.png)
+![](images/Screenshot%20from%202023-02-26%2021-34-11.png)
+![](images/Screenshot%20from%202023-02-26%2021-34-31.png)
+![](images/Screenshot%20from%202023-02-26%2021-34-51.png)
+![](images/Screenshot%20from%202023-02-26%2021-35-00.png)
+![](images/Screenshot%20from%202023-02-26%2021-35-26.png)
+![](images/Screenshot%20from%202023-02-26%2021-35-35.png)
+
+```bash
+git tag # List all tags
+git tag -l "<pattern>" # List all tags satisfying the pattern
+
+git checkout <tag-name> # To checkout at a particular tag
+
+git tag <tag-name> # Create a lightweight tag, By default, Git will create the tag referring to the commit that HEAD is referencing
+git tag -a <tag-name> # Create annotated tags
+# OR
+git tag -a <tag-name> -m <message>
+# OR
+git tag <tag-name> <commit-hash> # Tagging previous commits
+
+git tag -f <tag-name> # Forcing the reuse of a used tag
+
+git tag -d <tag-name> # Deleting a tag
+
+# By default, the git push command doesn’t transfer tags to remote servers.
+git push --tags # Transfer all of your tags to the remote server that are not already there.
+```
+
+---
+
+## Git behind the scenes
+
+![](images/Screenshot%20from%202023-02-26%2021-54-48.png)
+![](images/Screenshot%20from%202023-02-26%2021-55-19.png)
+![](images/Screenshot%20from%202023-02-26%2021-55-43.png)
+![](images/Screenshot%20from%202023-02-26%2021-56-00.png)
+![](images/Screenshot%20from%202023-02-26%2021-56-13.png)
+![](images/Screenshot%20from%202023-02-26%2021-56-42.png)
+![](images/Screenshot%20from%202023-02-26%2021-57-04.png)
+
+- Git uses the SHA-1 algorithm
+  ![](images/Screenshot%20from%202023-02-26%2023-30-53.png)
+- Git hash-object
+  ![](images/Screenshot%20from%202023-02-27%2000-08-38.png)
+
+```bash
+echo hello | git hash-object --stdin # Just spits out the hashed value without writing anything to .git directory
+echo hello | git hash-object --stdin -w # write the content of the input in .git/objects folder
+git cat-file -p <object-hash> # Takes the stored file in the .git/objects directory and converts it back to the original file; -p is for pretty print
+```
+
+![](images/Screenshot%20from%202023-02-27%2000-12-38.png)
+![](images/Screenshot%20from%202023-02-27%2000-13-00.png)
+![](images/Screenshot%20from%202023-02-27%2000-13-12.png)
+![](images/Screenshot%20from%202023-02-27%2000-15-06.png)
+![](images/Screenshot%20from%202023-02-27%2000-15-19.png)
+![](images/Screenshot%20from%202023-02-27%2000-15-34.png)
+![](images/Screenshot%20from%202023-02-27%2000-16-01.png)
+![](images/Screenshot%20from%202023-02-27%2000-16-20.png)
+![](images/Screenshot%20from%202023-02-27%2000-16-28.png)
+
+```bash
+# Viewing trees
+git cat-file -p master^{tree} # master^{tree} syntax specifies the tree object that is pointed to by the tip of our master branch
+
+git cat-file -t <commit-hash> # type of git object
+```
+
+---
