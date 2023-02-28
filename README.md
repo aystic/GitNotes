@@ -1,4 +1,24 @@
-# Git
+<h1 align="center"> Git </h1>
+
+
+<h2>Index</h2>
+
+- [Configuring git](#configuring-git)
+- [Introduction](#introduction)
+- [Working with git](#working-with-git)
+- [Git branching](#git-branching)
+- [Git Diff](#git-diff)
+- [Stashing](#stashing)
+- [Undoing changes](#undoing-changes)
+- [GitHub](#github)
+- [Fetch and pull](#fetch-and-pull)
+- [Git collaboration workflows](#git-collaboration-workflows)
+- [Rebasing](#rebasing)
+- [Git tags](#git-tags)
+- [Git behind the scenes](#git-behind-the-scenes)
+- [Reflog](#reflog)
+- [Git aliases](#git-aliases)
+
 
 ## Configuring git
 
@@ -329,8 +349,7 @@ git push <remote> <local-branch>:<remote-branch>
 # setting upstream of a branch
 git push -u <remote> <branch>
 ```
-
-## ![](images/Screenshot%20from%202023-02-24%2000-28-55.png)
+![](images/Screenshot%20from%202023-02-24%2000-28-55.png)
 
 ---
 
@@ -525,5 +544,23 @@ git cat-file -p master^{tree} # master^{tree} syntax specifies the tree object t
 
 git cat-file -t <commit-hash> # type of git object
 ```
+
+---
+
+## Reflog
+![](images/Screenshot%20from%202023-02-28%2022-21-21.png)
+![](images/Screenshot%20from%202023-02-28%2022-21-58.png)
+![](images/Screenshot%20from%202023-02-28%2022-22-20.png)
+![](images/Screenshot%20from%202023-02-28%2022-23-33.png)
+![](images/Screenshot%20from%202023-02-28%2022-23-48.png)
+![](images/Screenshot%20from%202023-02-28%2022-24-20.png)
+![](images/Screenshot%20from%202023-02-28%2022-24-51.png)
+![](images/Screenshot%20from%202023-02-28%2022-25-05.png)
+
+---
+
+## Git aliases
+![](images/Screenshot%20from%202023-02-28%2022-27-03.png)
+![](images/Screenshot%20from%202023-02-28%2022-27-20.png)
 
 ---

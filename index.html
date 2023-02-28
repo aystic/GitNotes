@@ -31,6 +31,12 @@
       img {
         border-radius: 6px !important;
       }
+			a:link{
+				color: #ffb562;
+			}
+			a:visited{
+				color:#c7ecee ;
+			}
     </style>
 
     <link
@@ -61,7 +67,28 @@
     </style>
   </head>
   <body class="vscode-body vscode-dark">
-    <h1 id="git">Git</h1>
+    <h1 align="center">Git</h1>
+    <h2>Index</h2>
+    <ul>
+      <li><a href="#configuring-git">Configuring git</a></li>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#working-with-git">Working with git</a></li>
+      <li><a href="#git-branching">Git branching</a></li>
+      <li><a href="#git-diff">Git Diff</a></li>
+      <li><a href="#stashing">Stashing</a></li>
+      <li><a href="#undoing-changes">Undoing changes</a></li>
+      <li><a href="#github">GitHub</a></li>
+      <li><a href="#fetch-and-pull">Fetch and pull</a></li>
+      <li>
+        <a href="#git-collaboration-workflows">Git collaboration workflows</a>
+      </li>
+      <li><a href="#rebasing">Rebasing</a></li>
+      <li><a href="#git-tags">Git tags</a></li>
+      <li><a href="#git-behind-the-scenes">Git behind the scenes</a></li>
+      <li><a href="#reflog">Reflog</a></li>
+      <li><a href="#git-aliases">Git aliases</a></li>
+    </ul>
+		<hr/>
     <h2 id="configuring-git">Configuring git</h2>
     <ul>
       <li>Need to set the name and email of the user</li>
@@ -221,7 +248,10 @@ git branch -v <span class="hljs-comment"># to view more info</span>
     <pre><code class="language-bash">git branch &lt;branch-name&gt;
 </code></pre>
     <p>
-      <img src="images/Screenshot%20from%202023-02-16%2023-40-35.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-16%2023-40-35.png"
+        alt=""
+      />
     </p>
     <ul>
       <li>
@@ -375,21 +405,54 @@ git branch -D &lt;branch-name&gt; <span class="hljs-comment">#delete a branch wh
     <hr />
     <h2 id="git-diff">Git Diff</h2>
     <p>
-      <img src="images/Screenshot%20from%202023-02-21%2000-34-51.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-21%2000-38-06.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-21%2000-34-51.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-21%2000-38-06.png"
+        alt=""
+      />
     </p>
     <pre><code class="language-bash">git diff <span class="hljs-comment">#shows changes between the staging area and working directory</span>
 </code></pre>
     <p>
-      <img src="images/Screenshot%20from%202023-02-21%2001-12-00.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-21%2001-12-53.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-21%2001-13-06.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-21%2001-13-20.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-21%2001-13-28.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-21%2001-13-43.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-21%2001-13-52.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-21%2001-14-04.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-21%2001-14-12.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-21%2001-12-00.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-21%2001-12-53.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-21%2001-13-06.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-21%2001-13-20.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-21%2001-13-28.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-21%2001-13-43.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-21%2001-13-52.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-21%2001-14-04.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-21%2001-14-12.png"
+        alt=""
+      />
     </p>
     <pre><code class="language-bash">git diff HEAD <span class="hljs-comment">#lists all changes in the working directory since the last commit; staged + unstaged changes</span>
 
@@ -451,11 +514,26 @@ git stash clear <span class="hljs-comment"># Deletes all the stashes</span>
 git stash drop &lt;stash-name&gt; <span class="hljs-comment"># Deletes a particular stash</span>
 </code></pre>
     <p>
-      <img src="images/Screenshot%20from%202023-02-22%2001-05-14.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-22%2001-06-42.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-22%2001-06-58.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-22%2001-07-21.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-22%2001-09-38.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-22%2001-05-14.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-22%2001-06-42.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-22%2001-06-58.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-22%2001-07-21.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-22%2001-09-38.png"
+        alt=""
+      />
     </p>
     <hr />
     <h2 id="undoing-changes">Undoing changes</h2>
@@ -656,22 +734,40 @@ git push &lt;remote&gt; &lt;local-branch&gt;:&lt;remote-branch&gt;
 <span class="hljs-comment"># setting upstream of a branch</span>
 git push -u &lt;remote&gt; &lt;branch&gt;
 </code></pre>
-    <h2 id="">
-      <img src="images/Screenshot%20from%202023-02-24%2000-28-55.png" alt="" />
-    </h2>
+    <p>
+      <img
+        src="images/Screenshot%20from%202023-02-24%2000-28-55.png"
+        alt=""
+      />
+    </p>
     <hr />
     <h2 id="fetch-and-pull">Fetch and pull</h2>
     <p>
-      <img src="images/Screenshot%20from%202023-02-24%2000-36-11.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-24%2000-36-29.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-24%2000-36-37.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-24%2000-36-11.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-24%2000-36-29.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-24%2000-36-37.png"
+        alt=""
+      />
     </p>
     <pre><code class="language-bash"><span class="hljs-comment"># View remote references</span>
 git remote -r
 </code></pre>
     <p>
-      <img src="images/Screenshot%20from%202023-02-24%2000-43-36.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-24%2000-43-52.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-24%2000-43-36.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-24%2000-43-52.png"
+        alt=""
+      />
     </p>
     <ul>
       <li>
@@ -691,7 +787,10 @@ git switch &lt;remote-branch-name&gt; <span class="hljs-comment"># makes a local
 git checkout --track &lt;remote&gt;/&lt;branch-name&gt;
 </code></pre>
     <p>
-      <img src="images/Screenshot%20from%202023-02-24%2000-52-27.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-24%2000-52-27.png"
+        alt=""
+      />
     </p>
     <ul>
       <li>
@@ -716,9 +815,18 @@ git fetch &lt;remote&gt; &lt;branch&gt;
 git fetch <span class="hljs-comment"># updates the list of remote branches</span>
 </code></pre>
     <p>
-      <img src="images/Screenshot%20from%202023-02-24%2001-06-14.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-24%2001-06-23.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-24%2001-06-32.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-24%2001-06-14.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-24%2001-06-23.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-24%2001-06-32.png"
+        alt=""
+      />
     </p>
     <ul>
       <li>
@@ -749,7 +857,10 @@ git fetch <span class="hljs-comment"># updates the list of remote branches</span
 git pull &lt;remote&gt; &lt;branch&gt;
 </code></pre>
     <p>
-      <img src="images/Screenshot%20from%202023-02-24%2001-10-09.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-24%2001-10-09.png"
+        alt=""
+      />
     </p>
     <hr />
     <h2 id="git-collaboration-workflows">Git collaboration workflows</h2>
@@ -864,23 +975,50 @@ git pull &lt;remote&gt; &lt;branch&gt;
     <hr />
     <h2 id="rebasing">Rebasing</h2>
     <p>
-      <img src="images/Screenshot%20from%202023-02-25%2019-00-59.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-25%2019-05-38.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-25%2019-05-49.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-25%2019-06-25.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-25%2019-00-59.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-25%2019-05-38.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-25%2019-05-49.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-25%2019-06-25.png"
+        alt=""
+      />
     </p>
     <pre><code class="language-bash"><span class="hljs-comment"># Cleaning history</span>
 git switch feature <span class="hljs-comment"># switch to branch which is to be rebased</span>
 git rebase master <span class="hljs-comment"># the branch on whom to rebase</span>
 </code></pre>
     <p>
-      <img src="images/Screenshot%20from%202023-02-25%2019-06-39.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-25%2019-07-03.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2013-57-14.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-25%2019-06-39.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-25%2019-07-03.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2013-57-14.png"
+        alt=""
+      />
     </p>
     <p>
-      <img src="images/Screenshot%20from%202023-02-26%2014-12-38.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2014-13-58.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2014-12-38.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2014-13-58.png"
+        alt=""
+      />
     </p>
     <pre><code class="language-bash"><span class="hljs-comment"># Interactive rebase</span>
 git rebase -i &lt;commit-hash&gt; <span class="hljs-comment"># inplace rebasing</span>
@@ -889,15 +1027,42 @@ git rebase -i &lt;commit-hash&gt; <span class="hljs-comment"># inplace rebasing<
     <hr />
     <h2 id="git-tags">Git tags</h2>
     <p>
-      <img src="images/Screenshot%20from%202023-02-26%2021-33-18.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2021-33-37.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2021-33-53.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2021-34-11.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2021-34-31.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2021-34-51.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2021-35-00.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2021-35-26.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2021-35-35.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-33-18.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-33-37.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-33-53.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-34-11.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-34-31.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-34-51.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-35-00.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-35-26.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-35-35.png"
+        alt=""
+      />
     </p>
     <pre><code class="language-bash">git tag <span class="hljs-comment"># List all tags</span>
 git tag -l <span class="hljs-string">&quot;&lt;pattern&gt;&quot;</span> <span class="hljs-comment"># List all tags satisfying the pattern</span>
@@ -921,13 +1086,34 @@ git push --tags <span class="hljs-comment"># Transfer all of your tags to the re
     <hr />
     <h2 id="git-behind-the-scenes">Git behind the scenes</h2>
     <p>
-      <img src="images/Screenshot%20from%202023-02-26%2021-54-48.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2021-55-19.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2021-55-43.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2021-56-00.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2021-56-13.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2021-56-42.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-26%2021-57-04.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-54-48.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-55-19.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-55-43.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-56-00.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-56-13.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-56-42.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-26%2021-57-04.png"
+        alt=""
+      />
     </p>
     <ul>
       <li>
@@ -950,21 +1136,96 @@ git push --tags <span class="hljs-comment"># Transfer all of your tags to the re
 git cat-file -p &lt;object-hash&gt; <span class="hljs-comment"># Takes the stored file in the .git/objects directory and converts it back to the original file; -p is for pretty print</span>
 </code></pre>
     <p>
-      <img src="images/Screenshot%20from%202023-02-27%2000-12-38.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-27%2000-13-00.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-27%2000-13-12.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-27%2000-15-06.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-27%2000-15-19.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-27%2000-15-34.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-27%2000-16-01.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-27%2000-16-20.png" alt="" />
-      <img src="images/Screenshot%20from%202023-02-27%2000-16-28.png" alt="" />
+      <img
+        src="images/Screenshot%20from%202023-02-27%2000-12-38.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-27%2000-13-00.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-27%2000-13-12.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-27%2000-15-06.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-27%2000-15-19.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-27%2000-15-34.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-27%2000-16-01.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-27%2000-16-20.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-27%2000-16-28.png"
+        alt=""
+      />
     </p>
     <pre><code class="language-bash"><span class="hljs-comment"># Viewing trees</span>
 git cat-file -p master^{tree} <span class="hljs-comment"># master^{tree} syntax specifies the tree object that is pointed to by the tip of our master branch</span>
 
 git cat-file -t &lt;commit-hash&gt; <span class="hljs-comment"># type of git object</span>
 </code></pre>
+    <hr />
+    <h2 id="reflog">Reflog</h2>
+    <p>
+      <img
+        src="images/Screenshot%20from%202023-02-28%2022-21-21.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-28%2022-21-58.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-28%2022-22-20.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-28%2022-23-33.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-28%2022-23-48.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-28%2022-24-20.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-28%2022-24-51.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-28%2022-25-05.png"
+        alt=""
+      />
+    </p>
+    <hr />
+    <h2 id="git-aliases">Git aliases</h2>
+    <p>
+      <img
+        src="images/Screenshot%20from%202023-02-28%2022-27-03.png"
+        alt=""
+      />
+      <img
+        src="images/Screenshot%20from%202023-02-28%2022-27-20.png"
+        alt=""
+      />
+    </p>
     <hr />
   </body>
 </html>
